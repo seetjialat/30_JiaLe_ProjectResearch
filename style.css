@@ -547,3 +547,128 @@ footer {
         display: none;
     }
 }
+
+
+
+/* --- Split-Screen Spyglass Theme Banner --- */
+
+/* Container Setup */
+.hero-showcase.theme-banner.spyglass-banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Exact 50/50 split */
+    padding: 0; /* Let background colors bleed edge-to-edge */
+    overflow: hidden;
+    background-color: #ffb702de; /* Purple background from screenshot */
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 40px;
+    border: none;
+}
+
+/* Left Media Panel */
+.spyglass-banner .banner-media {
+    position: relative;
+    background-color: #EBECEE; /* Light gray background for image section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+}
+
+.spyglass-banner .main-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures lifestyle image spans correctly */
+}
+
+/* Right Text Details Panel */
+.spyglass-banner .banner-details {
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #ffffff;
+}
+
+/* "New" Tag Pill aligned to the top-right over the text panel */
+.spyglass-banner .tag-new-pill {
+    background-color: #FFD500; /* Official LEGO Yellow */
+    color: #000000;
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    align-self: flex-end; 
+}
+
+/* Typography styles matching the reference image layout */
+.spyglass-banner .banner-details h2 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.spyglass-banner .banner-description {
+    font-size: 16px;
+    color: #f3f4f6;
+    margin-bottom: 30px;
+    max-width: 440px;
+    line-height: 1.6;
+}
+
+/* Pill Shape Action Controls */
+.spyglass-banner .banner-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.spyglass-banner .btn-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: 30px; /* Fully rounded buttons */
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* White Call-to-Action Pill */
+.spyglass-banner .btn-white {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.spyglass-banner .btn-white:hover {
+    background-color: #f3f4f6;
+}
+
+/* Secondary Transparent Outline Pill */
+.spyglass-banner .btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.spyglass-banner .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 900px) {
+    .hero-showcase.theme-banner.spyglass-banner {
+        grid-template-columns: 1fr; /* Stacks vertically on mobile view */
+    }
+    .spyglass-banner .banner-details {
+        padding: 40px 24px;
+    }
+    .spyglass-banner .tag-new-pill {
+        align-self: flex-start; /* Correct placement adjustment for mobile grids */
+    }
+}
